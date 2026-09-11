@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>faor4814 Portfolio</title>
+  <meta name="description" content="Roblox user interface design portfolio.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="hero">
+    <p class="hero__eyebrow">ROBLOX UI DESIGNER</p>
+    <h1 class="hero__title">FAOR4814 PORTFOLIO</h1>
+    <p class="hero__tagline">CLEAN, MODERN INTERFACES FOR ROBLOX EXPERIENCES</p>
+  </header>
+
+  <main>
+    <section class="work" id="work">
+      <h2 class="section__title">SELECTED WORK</h2>
+      <!-- Cards are generated from the list in script.js -->
+      <div class="grid" id="grid"></div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p class="footer__text">GET IN TOUCH</p>
+    <nav class="footer__links">
+      <a href="https://twitter.com/" target="_blank" rel="noopener">TWITTER / X</a>
+      <a href="https://discord.com/" target="_blank" rel="noopener">DISCORD</a>
+    </nav>
+    <p class="footer__copy">&copy; <span id="year"></span> FAOR4814</p>
+  </footer>
+
+  <!-- Lightbox (opens when a card is clicked) -->
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <button class="lightbox__close" id="lightbox-close" aria-label="Close">&times;</button>
+    <img class="lightbox__img" id="lightbox-img" src="" alt="">
+    <p class="lightbox__caption" id="lightbox-caption"></p>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
