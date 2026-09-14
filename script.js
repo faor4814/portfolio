@@ -9,7 +9,7 @@ const projects = [
   { image: "images/ui-1.png", title: "Shop UI" },
   { image: "images/ui-2.png", title: "Inventory UI" },
   { image: "images/ui-3.png", title: "Settings UI" },
-  { image: "images/ui-4.png", title: "Daily Rewards UI" },
+  { image: "images/daily-rewards.png", title: "Daily Rewards UI" },
 ];
 
 /* ---------- Build the grid ---------- */
