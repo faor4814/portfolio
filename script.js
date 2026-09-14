@@ -6,10 +6,10 @@
    ========================================================= */
 
 const projects = [
-  { image: "images/ui-1.png", title: "Shop Interface", sub: "Purchasing Flow" },
-  { image: "images/ui-2.png", title: "Inventory",      sub: "Grid & Tooltips" },
-  { image: "images/ui-3.png", title: "Settings Panel", sub: "Toggles & Sliders" },
-  { image: "images/ui-4.png", title: "Daily Rewards",  sub: "Streak System" },
+  { image: "images/ui-1.png", title: "Shop UI" },
+  { image: "images/ui-2.png", title: "Inventory UI" },
+  { image: "images/ui-3.png", title: "Settings UI" },
+  { image: "images/ui-4.png", title: "Daily Rewards UI" },
 ];
 
 /* ---------- Build the grid ---------- */
