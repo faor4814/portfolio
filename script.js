@@ -3,13 +3,20 @@
    Add one object per project. The image path is relative to
    this folder, so drop files into /images and reference them
    as "images/your-file.png".
+
+   crop: [x, y, width, height] in image pixels is the UI frame
+   shown on the card, centered over the Studio background so
+   every card fits the same way. Clicking a card still opens
+   the full screenshot.
    ========================================================= */
 
 const projects = [
-  { image: "images/ui-1.png", title: "Shop UI" },
-  { image: "images/ui-2.png", title: "Inventory UI" },
-  { image: "images/settings.png", title: "Settings UI" },
-  { image: "images/daily-rewards.png?v=3", title: "Daily Rewards UI" },
+  { image: "images/shop.webp", title: "Shop UI", crop: [40, 41, 1021, 571] },
+  { image: "images/inventory.webp", title: "Inventory UI", crop: [38, 35, 1033, 623] },
+  { image: "images/settings.png?v=2", title: "Settings UI", crop: [24, 26, 975, 555] },
+  { image: "images/daily-rewards.png?v=4", title: "Daily Rewards UI", crop: [21, 30, 991, 547] },
+  { image: "images/index.webp", title: "Index UI", crop: [307, 47, 917, 573] },
+  { image: "images/trade.png", title: "Trade UI", crop: [25, 24, 987, 595] },
 ];
 
 /* ---------- Build the grid ---------- */
@@ -30,7 +37,22 @@ projects.forEach((p) => {
   img.src = p.image;
   img.alt = p.title;
   img.loading = "lazy";
-  box.appendChild(img);
+
+  if (p.crop) {
+    const [x, y, w, h] = p.crop;
+    const frame = document.createElement("div");
+    frame.className = "card__frame";
+    frame.style.aspectRatio = `${w} / ${h}`;
+    img.addEventListener("load", () => {
+      img.style.width = `${(img.naturalWidth / w) * 100}%`;
+      img.style.left = `${(-x / w) * 100}%`;
+      img.style.top = `${(-y / h) * 100}%`;
+    });
+    frame.appendChild(img);
+    box.appendChild(frame);
+  } else {
+    box.appendChild(img);
+  }
 
   const caption = document.createElement("p");
   caption.className = "card__caption";

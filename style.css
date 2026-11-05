@@ -92,9 +92,12 @@ a { color: inherit; text-decoration: none; }
 
 .card__box {
   position: relative;
-  aspect-ratio: 1.55;
+  display: flex;
+  align-items: center;
+  aspect-ratio: 1.48;
+  padding: 6%;
   border-radius: var(--radius);
-  background: var(--bg-card);
+  background: var(--bg-card) url("images/baseplate.webp") center / cover no-repeat;
   border: 1px solid var(--border);
   overflow: hidden;
   transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
@@ -112,8 +115,21 @@ a { color: inherit; text-decoration: none; }
 .card__img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
   display: block;
+}
+
+/* Shows just the UI frame from a screenshot (see crop in script.js) */
+.card__frame {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.card__frame .card__img {
+  position: absolute;
+  height: auto;
+  max-width: none;
 }
 
 /* Shown when an image file is missing */
